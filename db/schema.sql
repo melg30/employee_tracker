@@ -6,7 +6,7 @@ CREATE DATABASE trackerDB;
 -- use the database you created 
 USE trackerDB;
 
--- create some tables 
+-- create tables 
 CREATE TABLE employee
 (
     id INTEGER
@@ -15,11 +15,11 @@ CREATE TABLE employee
     (30) NOT NULL, 
     last_name VARCHAR
     (30) NOT NULL,
-    -- role_id will be a FORGEIGN key and will reference to the role table
+    
     role_id INTEGER,
     INDEX role_ind
     (role_id),
-    -- manager_id will be a FORGEIGN key
+    
     manager_id INTEGER,
     INDEX mang_ind
     (manager_id),
@@ -35,7 +35,7 @@ CREATE TABLE employee
         (30),
     salary	DECIMAL
         (10,2),
-    -- department_id will be a FORGEIN key and will reference to the department table
+  
     department_id INT,
     PRIMARY KEY
         (id)
@@ -52,8 +52,8 @@ CREATE TABLE employee
 );
 
 
-            -- RUN SEED FILE --
-            --Then run below sql code
+            -- RUN SEED FILE FIST --
+
             SELECT e.id, e.first_name, e.last_name, d.name AS department, r.title, r.salary, CONCAT_WS(" ", m.first_name, m.last_name) AS manager
             FROM employee e
                 LEFT JOIN employee m ON m.id = e.manager_id

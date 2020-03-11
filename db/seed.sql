@@ -16,7 +16,7 @@ VALUES
     ("Captain", 55000.00, 1),
     ("PE", 70000.00, 2),
     ("CXIO", 80000.00, 3),
-    ("Dedicated Suppot", 60000.00, 3),
+    ("Dedicated Support", 60000.00, 3),
     ("Environment", 50000.00, 4);
 
 INSERT INTO department
